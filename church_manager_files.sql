@@ -99,3 +99,33 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2021-05-31 17:16:02
+
+DROP TABLE IF EXISTS platform_role;
+CREATE TABLE platform_role(platform_role_key int NOT NULL AUTO_INCREMENT PRIMARY KEY, role_name varchar(50), role_description varchar(500), 
+added_by varchar(50), added_at date, last_updated_by varchar(50), last_updated_at date);
+
+DROP TABLE IF EXISTS member;
+CREATE TABLE member(member_key int NOT NULL AUTO_INCREMENT PRIMARY KEY, first_name varchar(30), last_name varchar(50), email_address varchar(120), 
+added_by varchar(50), added_at date, last_updated_by varchar(50), last_updated_at date);
+
+DROP TABLE IF EXISTS service_assignment;
+CREATE TABLE service_assignment(service_assignment_key int NOT NULL AUTO_INCREMENT,
+member_key int not null,
+service_key int not null,
+platform_role_key int not null, 
+added_by varchar(50), 
+added_at date, 
+last_updated_by varchar(50), 
+last_updated_at date);
+
+DROP TABLE IF EXISTS service_type;
+CREATE TABLE service_type(service_type_key int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+service_type_name varchar(50),
+service_type_description varchar(500),
+added_by varchar(50), 
+added_at date, 
+last_updated_by varchar(50), 
+last_updated_at date);
+
+DROP TABLE IF EXISTS service_type_platform_roles;
+CREATE TABLE service_type_platform_roles(service_type varchar(50), platform_role varchar(50));
