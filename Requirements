@@ -1,0 +1,9 @@
+Simple use case based list of requirements
+
+1 The system will hold (and allow the maintenance of) a list of members, a list of services, a list of platform roles and an association between the three
+  (An association between member, service and platform role essentially indicates who does what during which service)
+2 Each service can be configured to have a minimum set list of roles - for example, Elder on duty, Main Deacon etc.  
+  Eventually the system will advise if all necessary roles are not assigned
+3 The system will automatically notify members of their role assignments in advance of the service.  This can all be configured for no, single or multiple reminders
+4 After the service, the system will allow us to record if the member did participate.  This helps us generate a %ge reliability for members
+5 The system will eventually assist with member assignment - perhaps automatically assigning them factoring in their %ge reliability
